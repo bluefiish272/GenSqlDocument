@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@using SqlDocument.Models
+@model List<SpInfo>
+<style>
+    .title {
+     width:15%;
+    }
+</style>
+
+@foreach (var item in Model)
+{
+    <table>
+        <tr>
+            <td class="title">預存程序名稱</td>
+            <td>@item.SpName</td>
+        </tr>
+        <tr>
+            <td class="title">描述</td>
+            <td>@item.Description</td>
+
+        </tr>
+        <tr>
+            <td class="title">建立日期</td>
+            <td>@($"{item.CreateDate:yyyy/MM/dd}")</td>
+        </tr>
+        <tr>
+            <td class="title">修改日期</td>
+            <td>@($"{item.ModifyDate:yyyy/MM/dd}")</td>
+        </tr>
+        <tr>
+            <td class="title">Script</td>
+            <td>@item.Script</td>
+        </tr>
+    </table>
+}
+
